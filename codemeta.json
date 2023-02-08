@@ -1,0 +1,22 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/CC0-1.0",
+    "codeRepository": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering",
+    "dateCreated": "2023-02-01",
+    "issueTracker": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering/issues",
+    "name": "Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering",
+    "description": "Repository for Artificial Intelligence And Open Science In Research Software Engineering subject",
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Alonso",
+            "familyName": "García Velasco",
+            "email": "alonso.garcia.velasco@alumnos.upm.es",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Polytechnic University of Madrid's Student"
+            }
+        }
+    ]
+}
