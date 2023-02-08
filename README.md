@@ -8,16 +8,16 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
 ### APA
 
 ```text
-García Velasco, A. Repository for Artificial Intelligence And Open Science In Research Software Engineering subject [Computer software]. https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering
+García Velasco, A. Artificial Intelligence And Open Science In Research Software Engineering [Computer software]. https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering
 ```
 
 ### BibTex
 
 ```text
-@software{Garcia_Velasco_Repository_for_Artificial,
+@software{Garcia_Velasco_Artificial_Intelligence_And,
 author = {García Velasco, Alonso},
 license = {CC0-1.0},
-title = {{Repository for Artificial Intelligence And Open Science In Research Software Engineering subject}},
+title = {{Artificial Intelligence And Open Science In Research Software Engineering}},
 url = {https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering}
 }
 ```
