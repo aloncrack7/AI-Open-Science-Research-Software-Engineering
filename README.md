@@ -21,3 +21,27 @@ title = {{Artificial Intelligence And Open Science In Research Software Engineer
 url = {https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering}
 }
 ```
+
+## Server instalation
+
+```bash
+docker pull grobid/grobid:0.7.2
+```
+
+```bash
+docker run --rm -p 8070:8070 -p 8081:8071 grobid/grobid:0.7.2
+```
+
+## Client instalation
+
+- Run clientInstallation.sh wich uses python venv to make a virtual env for the project
+
+```bash
+./clientInstalation.sh
+```
+
+- tkinter is also need it
+
+```bash
+sudo apt install python3-tk
+```
