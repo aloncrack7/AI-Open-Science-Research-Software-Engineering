@@ -1,4 +1,5 @@
 # Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering
+
 Repository for Artificial Intelligence And Open Science In Research Software Engineering subject
 
 ## [Licence](https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md)
@@ -25,11 +26,11 @@ url = {https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineeri
 ## Server instalation
 
 ```bash
-docker pull grobid/grobid:0.7.2
+docker pull lfoppiano/grobid:0.7.2
 ```
 
 ```bash
-docker run --rm -p 8070:8070 -p 8081:8071 grobid/grobid:0.7.2
+docker run --rm -p 8070:8070 -p 8081:8071 lfoppiano/grobid:0.7.2
 ```
 
 ## Client instalation
@@ -37,10 +38,10 @@ docker run --rm -p 8070:8070 -p 8081:8071 grobid/grobid:0.7.2
 - Run clientInstallation.sh wich uses python venv to make a virtual env for the project
 
 ```bash
-./clientInstalation.sh
+./clientInstalationVenv.sh
 ```
 
-- tkinter is also need it
+- tkinter is also need it for the word clouds
 
 ```bash
 sudo apt install python3-tk
