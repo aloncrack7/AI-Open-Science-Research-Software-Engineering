@@ -4,6 +4,10 @@ Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering
 Repository for Artificial Intelligence And Open Science In Research
 Software Engineering subject
 
+.. image:: https://readthedocs.org/projects/ai-open-science-research-software-engineering/badge/?version=latest
+    :target: https://ai-open-science-research-software-engineering.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
 `Licence (CC0-1.0 license) <https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md>`__
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
