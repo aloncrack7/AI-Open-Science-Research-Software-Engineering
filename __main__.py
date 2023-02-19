@@ -1,5 +1,7 @@
+from pathlib import Path
 from grobid_client_python.grobid_client.grobid_client import GrobidClient
 import os
+import re
 from datetime import datetime
 import pandas as pd
 import numpy as np
@@ -11,27 +13,44 @@ import matplotlib.pyplot as plt
 client = GrobidClient(config_path="./config.json")
 date=datetime.date(datetime.now())
 time=datetime.time(datetime.now())
-folderPath=f'papers/out_{date}_{time}'
+folderPath=f'out_{date}_{time}'
+
+def prepareFolder():
+    oldDircetory=os.popen(f"ls | grep \"out_\" | tail -n 1").read().replace("\n", "")
+    os.system(f"mkdir {folderPath}")
+    loadedPapers=[]
+
+    if oldDircetory!='':
+        with open(f"{oldDircetory}/loadedPapers.txt") as file:
+            loadedPapers = [line.rstrip() for line in file]
+
+    for requestPaper in os.listdir("papers"):
+        fileName=re.sub(r"\.[^$]*", "", requestPaper)
+        # TODO USE symbolic links
+        # if fileName in loadedPapers:
+        #     print(f"ln -s ./{oldDircetory}/{fileName}.tei.xml ./{folderPath}/{fileName}.tei.xml")
+        #     os.system(f"ln -s ./{oldDircetory}/{fileName}.tei.xml ./{folderPath}/{fileName}.tei.xml")
+        # else: 
+        os.system(f"cp papers/{requestPaper} {folderPath}")
+
+        os.system(f"echo {fileName} >> {folderPath}/loadedPapers.txt")
 
 # Ask the server to process the .pdf  
 def extractInfo():
-    client.process("processFulltextDocument", "./papers", n=10)
-
-# Save the procces .tei to the folder desiganted for it
-def saveTEIs():
-    os.system(f'mkdir {folderPath}')
-    os.system(f'mv papers/*.tei.xml {folderPath}')
+    client.process("processFulltextDocument", folderPath, n=10)
+    os.system(f"rm {folderPath}/*.pdf")
 
 # Get the abstract of every paper
 def extractAbstract():
-    teis=os.listdir(f"{folderPath}")
+    teis=os.listdir(folderPath)
 
     abstracts=""
     for i in teis:
-        filePath=f'{folderPath}/{i}'
-        with open(filePath, 'r') as xmlFile:
-            doc=gtx.parse_document_xml(xmlFile.read())
-            abstracts+=doc.abstract
+        if not i.endswith(".txt"):
+            filePath=f'{folderPath}/{i}'
+            with open(filePath, 'r') as xmlFile:
+                doc=gtx.parse_document_xml(xmlFile.read())
+                abstracts+=doc.abstract
     
     return abstracts
 
@@ -45,35 +64,41 @@ def generateWordCloud(text):
 def countFigures():
     teis=os.listdir(f"{folderPath}")
 
-    counts=[0]*len(teis)
+    counts=[0]*(len(teis)-1)
+    pos=0
     for i in range(0, len(teis)):
-        counts[i]=int(os.popen(f"grep -o '<figure xmlns=' {folderPath}/{teis[i]} | wc -l").read().replace('\n', ''))
+        if not teis[i].endswith(".txt"):
+            counts[pos]=int(os.popen(f"grep -o '<figure xmlns=' {folderPath}/{teis[i]} | wc -l").read().replace('\n', ''))
+            pos+=1
 
     return counts
 
 def genHistogram(numFigures):
     plt.hist(numFigures, density=False)
     plt.ylabel("Number of figures")
-    plt.xticks(numFigures, os.listdir(f"{folderPath}"))
+    plt.xticks(numFigures, os.listdir(f"{folderPath}").remove("loadedPapers.txt"))
     plt.show()
 
 def getCitations():
     teis=os.listdir(f"{folderPath}")
 
-    links=[[]]*len(teis)
+    links=[[]]*(len(teis)-1)
+    pos=0
     for i in range(0, len(teis)):
-        filePath=f'{folderPath}/{teis[i]}'
-        with open(filePath, 'r') as xmlFile:
-            doc=gtx.parse_document_xml(xmlFile.read())
-            links[i]=doc.citations
+        if not teis[i].endswith(".txt"):
+            filePath=f'{folderPath}/{teis[i]}'
+            with open(filePath, 'r') as xmlFile:
+                doc=gtx.parse_document_xml(xmlFile.read())
+                links[pos]=doc.citations
+            pos+=1
     
     return links
     
 def main():
+    prepareFolder()
     extractInfo()
-    saveTEIs()
-    # generateWordCloud(extractAbstract())
-    # genHistogram(countFigures())
+    generateWordCloud(extractAbstract())
+    genHistogram(countFigures())
     print(getCitations())
 
 

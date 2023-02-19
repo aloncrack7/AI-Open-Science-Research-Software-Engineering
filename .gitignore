@@ -160,5 +160,5 @@ cython_debug/
 #.idea/
 
 grobid_client_python/**/*
-papers/out_*/*
+out_*/*
 AIOSRSE/**/*
