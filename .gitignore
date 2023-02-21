@@ -162,3 +162,5 @@ cython_debug/
 grobid_client_python/**/*
 out_*/*
 AIOSRSE/**/*
+
+.vscode

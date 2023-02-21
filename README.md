@@ -6,6 +6,8 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
 
 ## [Licence (CC0-1.0 license)](https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md)
 
+[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+
 ## Citation
 
 ### APA
