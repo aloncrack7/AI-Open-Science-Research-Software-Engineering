@@ -3,6 +3,8 @@
 Repository for Artificial Intelligence And Open Science In Research Software Engineering subject
 
 [![Documentation Status](https://readthedocs.org/projects/ai-open-science-research-software-engineering/badge/?version=latest)](https://ai-open-science-research-software-engineering.readthedocs.io/en/latest/?badge=latest)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## [Licence (CC0-1.0 license)](https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md)
 
