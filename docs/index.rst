@@ -10,6 +10,16 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
    :alt: Documentation Status
 
 
+.. image:: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+   :target: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+   :alt: Python
+
+
+.. image:: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+   :target: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+   :alt: GitHub
+
+
 `Licence (CC0-1.0 license) <https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md>`_
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
