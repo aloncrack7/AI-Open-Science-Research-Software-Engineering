@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  grobid:
+    image: lfoppiano/grobid:0.7.2
+    container_name: grobid
+    restart: unless-stopped
+    ports:
+      - 8070:8070
+  
+  client:
+    image: client_image
+    build: .
+    container_name: client
+    restart: unless-stopped
+    depends_on: 
+      - grobid
+    
