@@ -60,7 +60,8 @@ def generateWordCloud(text):
     wordCloud = WordCloud(collocations = False, background_color = 'white').generate(text)
     plt.imshow(wordCloud, interpolation='bilinear')
     plt.axis("off")
-    plt.show()
+    plt.savefig('wordcloud.png')
+    plt.close()
 
 def countFigures(dir=folderPath):
     teis=os.listdir(f"{dir}")
@@ -78,7 +79,7 @@ def genHistogram(numFigures, dir=folderPath):
     plt.hist(numFigures, density=False)
     plt.ylabel("Number of figures")
     plt.xticks(numFigures, os.listdir(f"{dir}").remove("loadedPapers.txt"))
-    plt.show()
+    plt.savefig('histogram.png')
 
 def getCitations(dir=folderPath):
     teis=os.listdir(f"{dir}")
@@ -90,7 +91,13 @@ def getCitations(dir=folderPath):
             filePath=f'{dir}/{teis[i]}'
             with open(filePath, 'r') as xmlFile:
                 doc=gtx.parse_document_xml(xmlFile.read())
-                links[pos]=doc.citations
+                fullCitation=doc.citations
+                matches=re.finditer(r"url='[^']*", fullCitation)
+                print(matches)
+                
+                for j in matches:
+                    link=j.group()[4, :]
+                    links[pos]=f"{links[pos]} {link}"
             pos+=1
     
     return links
