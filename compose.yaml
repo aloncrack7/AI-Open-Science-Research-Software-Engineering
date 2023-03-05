@@ -11,7 +11,9 @@ services:
     image: client_image
     build: .
     container_name: client
-    restart: unless-stopped
+    # restart: unless-stopped
     depends_on: 
       - grobid
-    
+    command: python __main__.py
+    volumes:
+      - ./papers:/home/root/project/papers:rw

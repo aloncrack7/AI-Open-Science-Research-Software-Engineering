@@ -1,3 +1,4 @@
 #!/bin/bash
-source /home/root/$ENV_PREFIX/bin/activate
-exec "$@"
+set -e
+
+conda run -n $ENV_PREFIX $@

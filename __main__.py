@@ -84,31 +84,28 @@ def genHistogram(numFigures, dir=folderPath):
 def getCitations(dir=folderPath):
     teis=os.listdir(f"{dir}")
 
-    links=[[]]*(len(teis)-1)
-    pos=0
-    for i in range(0, len(teis)):
-        if not teis[i].endswith(".txt"):
-            filePath=f'{dir}/{teis[i]}'
+    links=''
+    for i in teis:
+        if not i.endswith(".txt"):
+            filePath=f'{dir}/{i}'
             with open(filePath, 'r') as xmlFile:
                 doc=gtx.parse_document_xml(xmlFile.read())
                 fullCitation=doc.citations
-                matches=re.finditer(r"url='[^']*", fullCitation)
-                print(matches)
-                
-                for j in matches:
-                    link=j.group()[4, :]
-                    links[pos]=f"{links[pos]} {link}"
-            pos+=1
+
+                for j in fullCitation:
+                    if j.url!=None:
+                        links+=(j.url)+' '
     
-    return links
+    return links[:-1]
     
 def main():
     prepareFolder()
     extractInfo()
     generateWordCloud(extractAbstract())
     genHistogram(countFigures())
-    print(getCitations())
 
+    with open("./links", 'w') as fd :
+        fd.write(getCitations())
 
 if __name__=="__main__":
     main()
