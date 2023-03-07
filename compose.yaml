@@ -6,14 +6,21 @@ services:
     restart: unless-stopped
     ports:
       - 8070:8070
+    networks:
+      - grobid
   
   client:
     image: client_image
     build: .
     container_name: client
-    # restart: unless-stopped
     depends_on: 
       - grobid
     command: python __main__.py
     volumes:
       - ./papers:/home/root/project/papers:rw
+      - ./out_container:/home/root/project/out:rw
+    networks:
+      - grobid
+
+networks:
+  grobid:

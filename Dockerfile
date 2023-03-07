@@ -13,8 +13,11 @@ RUN mkdir -p /home/root/project
 WORKDIR /home/root/project
 COPY ./__init__.py /home/root/project
 COPY ./__main__.py /home/root/project
-COPY ./__init__.py /home/root/project
-COPY ./config.json /home/root/project
+COPY ./setup.py /home/root/project
+RUN mkdir /home/root/project/func
+COPY ./func/__init__.py /home/root/project/func
+COPY ./func/func.py /home/root/project/func
+COPY ./configDocker.json /home/root/project/config.json
 COPY ./requirements.txt /home/root/project
 
 ENV CONDA_DIR=/home/root/conda
@@ -29,7 +32,7 @@ RUN conda init bash
 
 ENV ENV_PREFIX=AIOSRSE
 
-ENV ENV_PREFIX=mlflow_env
+ENV ENV_PREFIX=AIOSRSE
 RUN conda update --name base --channel defaults conda 
 RUN conda create -n $ENV_PREFIX
 RUN conda clean --all --yes
@@ -40,16 +43,8 @@ RUN conda activate ${ENV_PREFIX} && \
     git clone https://github.com/kermitt2/grobid_client_python && \
     cd grobid_client_python && \
     python3 setup.py install && \
-    cd ..
-
-# RUN python3 -m venv ${ENV_PREFIX} && \
-#     source ${ENV_PREFIX}/bin/activate && \
-#     python3 -m pip install --upgrade pip && \
-#     pip install -r requirements.txt && \
-#     git clone https://github.com/kermitt2/grobid_client_python && \
-#     cd grobid_client_python && \
-#     python3 setup.py install && \
-#     cd ..
+    cd .. && \
+    pip install -e .
 
 COPY entrypoint.sh /home/root/
 RUN chmod 0700 /home/root/entrypoint.sh
