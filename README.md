@@ -4,6 +4,7 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
 
 [![Documentation Status](https://readthedocs.org/projects/ai-open-science-research-software-engineering/badge/?version=latest)](https://ai-open-science-research-software-engineering.readthedocs.io/en/latest/?badge=latest)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## [Licence (CC0-1.0 license)](https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md)
@@ -29,7 +30,27 @@ url = {https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineeri
 }
 ```
 
-## Server instalation
+## Docker compose (Recomended aproach)
+
+- All will be install and run via:
+
+```bash
+docker compose up -d 
+```
+
+- After running he containers you can make sure the program was executed correctly using:
+
+```bash
+docker inspect client
+```
+
+- **Note** (clients is not consitent the firts few times is launch)
+
+```bash
+docker start client
+```
+
+## Server instalation (Only in docker)
 
 ```bash
 docker pull lfoppiano/grobid:0.7.2
@@ -39,7 +60,7 @@ docker pull lfoppiano/grobid:0.7.2
 docker run --rm -p 8070:8070 -p 8081:8071 lfoppiano/grobid:0.7.2
 ```
 
-## Client instalation
+## Client instalation (Local)
 
 - Run clientInstallation.sh wich uses python venv to make a virtual env for the project
 
@@ -68,6 +89,20 @@ cd grobid_client_python
 python3 setup.py install
 
 cd ..
+```
+
+## Client installation and run (docker) **Not complete, for running in docker use compose**
+
+- The docker is configured to used compose. This command is just to ilustrate the base of client using docker
+
+```bash
+docker build -t client .
+```
+
+- You can run the docker and the scripts via
+
+```bash
+docker run -it --name client python3 __main__.py
 ```
 
 ## Running the program
