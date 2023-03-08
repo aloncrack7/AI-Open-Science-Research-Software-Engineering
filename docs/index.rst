@@ -23,6 +23,9 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
 .. image:: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
    :target: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
    :alt: GitHub
+   
+.. image:: https://zenodo.org/badge/596244501.svg
+   :target: https://zenodo.org/badge/latestdoi/596244501
 
 
 `Licence (CC0-1.0 license) <https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md>`_
