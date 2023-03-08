@@ -15,6 +15,11 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
    :alt: Python
 
 
+.. image:: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+   :target: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+   :alt: Docker
+
+
 .. image:: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
    :target: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
    :alt: GitHub
@@ -51,8 +56,32 @@ BibTex
    url = {https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering}
    }
 
-Server instalation
-------------------
+Docker compose (Recomended aproach)
+-----------------------------------
+
+
+* All will be install and run via:
+
+.. code-block:: bash
+
+   docker compose up -d --build
+
+
+* After running he containers you can make sure the program was executed correctly using:
+
+.. code-block:: bash
+
+   docker logs client
+
+
+* **Note (clients is not consitent the firts few times is launch, please make sure to run it a few times with the followign command and see the logs produced afterwars, tends to work better using docker compose with the flasg --build)**
+
+.. code-block:: bash
+
+   docker start client
+
+Server instalation for local use
+--------------------------------
 
 .. code-block:: bash
 
@@ -62,8 +91,8 @@ Server instalation
 
    docker run --rm -p 8070:8070 -p 8081:8071 lfoppiano/grobid:0.7.2
 
-Client instalation
-------------------
+Client instalation (Local)
+--------------------------
 
 
 * Run clientInstallation.sh wich uses python venv to make a virtual env for the project
@@ -79,8 +108,8 @@ Client instalation
 
    sudo apt install python3-tk
 
-What does the clien instalation do
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What does the client instalation do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 * It creates a virtual enviroment, activates, downloads the latest version of pip and proceeds to install al requirements. After that clones the grobid client form the repository an installs it.
@@ -98,6 +127,8 @@ What does the clien instalation do
 
    cd ..
 
+   pip install -e .
+
 Running the program
 -------------------
 
@@ -107,3 +138,12 @@ Running the program
 .. code-block:: bash
 
    python3 __main__.py
+
+Running the test
+----------------
+
+
+* Make sure you have the client and the server properly installed
+
+```bash
+python3 test/test.py

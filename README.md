@@ -35,22 +35,22 @@ url = {https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineeri
 - All will be install and run via:
 
 ```bash
-docker compose up -d 
+docker compose up -d --build
 ```
 
 - After running he containers you can make sure the program was executed correctly using:
 
 ```bash
-docker inspect client
+docker logs client
 ```
 
-- **Note** (clients is not consitent the firts few times is launch)
+- **Note (clients is not consitent the firts few times is launch, please make sure to run it a few times with the followign command and see the logs produced afterwars, tends to work better using docker compose with the flasg --build)**
 
 ```bash
 docker start client
 ```
 
-## Server instalation (Only in docker)
+## Server instalation for local use
 
 ```bash
 docker pull lfoppiano/grobid:0.7.2
@@ -74,7 +74,7 @@ docker run --rm -p 8070:8070 -p 8081:8071 lfoppiano/grobid:0.7.2
 sudo apt install python3-tk
 ```
 
-### What does the clien instalation do
+### What does the client instalation do
 
 - It creates a virtual enviroment, activates, downloads the latest version of pip and proceeds to install al requirements. After that clones the grobid client form the repository an installs it.
 
@@ -89,20 +89,8 @@ cd grobid_client_python
 python3 setup.py install
 
 cd ..
-```
 
-## Client installation and run (docker) **Not complete, for running in docker use compose**
-
-- The docker is configured to used compose. This command is just to ilustrate the base of client using docker
-
-```bash
-docker build -t client .
-```
-
-- You can run the docker and the scripts via
-
-```bash
-docker run -it --name client python3 __main__.py
+pip install -e .
 ```
 
 ## Running the program
@@ -112,3 +100,10 @@ docker run -it --name client python3 __main__.py
 ```bash
 python3 __main__.py
 ```
+
+## Running the test
+
+- Make sure you have the client and the server properly installed
+
+```bash
+python3 test/test.py

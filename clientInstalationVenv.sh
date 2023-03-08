@@ -10,3 +10,5 @@ cd grobid_client_python
 python3 setup.py install
 
 cd ..
+
+pip install -e .

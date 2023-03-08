@@ -162,5 +162,7 @@ cython_debug/
 grobid_client_python/**/*
 out_*/*
 AIOSRSE/**/*
+out/**/*
+testIn/**/*
 
 .vscode

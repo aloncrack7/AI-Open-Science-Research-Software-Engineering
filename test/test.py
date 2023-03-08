@@ -33,7 +33,7 @@ class TestMetadataExtractor(unittest.TestCase):
 
         assert getCitations("./testIn2").count(' ')+1==3
 
-    def testNumberCitations(self):
+    def testWordCloudGenration(self):
         os.system("rm -rf ./testIn3")
         selectedPapers=os.listdir("papers")
 
