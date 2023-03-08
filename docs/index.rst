@@ -145,5 +145,6 @@ Running the test
 
 * Make sure you have the client and the server properly installed
 
-```bash
-python3 test/test.py
+.. code-block:: bash
+
+   python3 test/test.py
