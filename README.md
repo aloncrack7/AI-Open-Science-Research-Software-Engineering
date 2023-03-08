@@ -6,6 +6,8 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+[![DOI](https://zenodo.org/badge/596244501.svg)](https://zenodo.org/badge/latestdoi/596244501)
+
 
 ## [Licence (CC0-1.0 license)](https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md)
 
