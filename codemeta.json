@@ -4,9 +4,30 @@
     "license": "https://spdx.org/licenses/CC0-1.0",
     "codeRepository": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering",
     "dateCreated": "2023-02-01",
+    "datePublished": "2023-03-08",
+    "dateModified": "2023-03-08",
+    "downloadUrl": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering/releases/tag/v1.0.0",
     "issueTracker": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering/issues",
     "name": "Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering",
+    "version": "1.0.0",
     "description": "Repository for Artificial Intelligence And Open Science In Research Software Engineering subject",
+    "applicationCategory": "AI, Open Science, Research Software Engineering",
+    "referencePublication": "https://doi.org/10.5281/zenodo.7709706",
+    "programmingLanguage": [
+        "Python3"
+    ],
+    "operatingSystem": [
+        "Ubuntu:22.04",
+        "dockered"
+    ],
+    "softwareRequirements": [
+        "pandas>=1.5.3",
+        "grobid-tei-xml>=0.1.3",
+        "wordcloud>=1.8.2.2"
+    ],
+    "relatedLink": [
+        "https://ai-open-science-research-software-engineering.readthedocs.io/en/latest/?badge=latest"
+    ],
     "author": [
         {
             "@type": "Person",
