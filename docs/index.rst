@@ -25,6 +25,11 @@ Repository for Artificial Intelligence And Open Science In Research Software Eng
    :alt: GitHub
 
 
+.. image:: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+   :target: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+   :alt: Docker
+
+
 `Licence (CC0-1.0 license) <https://github.com/aloncrack7/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering/blob/main/LICENCE.md>`_
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
